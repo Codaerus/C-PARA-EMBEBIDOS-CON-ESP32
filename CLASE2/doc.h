@@ -98,3 +98,8 @@ esp_err_t gpio_set_pull_mode(gpio_num_t gpio_num, gpio_pull_mode_t pull)
           ESP_ERR_INVALID_ARG: Se pasó un argumento inválido (por ejemplo, un número de GPIO fuera de rango).
   * La función retorna un valor de tipo esp_err_t, que indica el estado de la operación
   */
+int gpio_get_level(gpio_num_t gpio_num)
+/**
+  * Se utiliza para leer el estado lógico de un GPIO
+  * @return: 0 | 1
+  */
