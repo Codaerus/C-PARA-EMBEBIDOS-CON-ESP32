@@ -53,6 +53,12 @@ typedef enum {
     GPIO_MODE_INPUT_OUTPUT = ((GPIO_MODE_DEF_INPUT) | (GPIO_MODE_DEF_OUTPUT)),                         /*!< GPIO mode : output and input mode                */
 } gpio_mode_t;
 
+typedef enum {
+    GPIO_PULLUP_ONLY,               /*!< Pad pull up            */
+    GPIO_PULLDOWN_ONLY,             /*!< Pad pull down          */
+    GPIO_PULLUP_PULLDOWN,           /*!< Pad pull up + pull down*/
+    GPIO_FLOATING,                  /*!< Pad floating           */
+} gpio_pull_mode_t;
 
 void gpio_pad_select_gpio(uint8_t gpio_num);
 
