@@ -16,7 +16,34 @@ typedef enum {
     ADC1_CHANNEL_MAX,
 } adc1_channel_t;
 
+/**
+ * @brief ADC attenuation parameter. Different parameters determine the range of the ADC. See ``adc1_config_channel_atten``.
+ */
+typedef enum {
+    ADC_ATTEN_DB_0   = 0,  /*!<No input attenumation, ADC can measure up to approx. 800 mV. */
+    ADC_ATTEN_DB_2_5 = 1,  /*!<The input voltage of ADC will be attenuated extending the range of measurement by about 2.5 dB (1.33 x) */
+    ADC_ATTEN_DB_6   = 2,  /*!<The input voltage of ADC will be attenuated extending the range of measurement by about 6 dB (2 x) */
+    ADC_ATTEN_DB_11  = 3,  /*!<The input voltage of ADC will be attenuated extending the range of measurement by about 11 dB (3.55 x) */
+    ADC_ATTEN_MAX,
+} adc_atten_t;
 
+/**
+ * @brief ADC resolution setting option.
+ * @note  Only used in single read mode
+ */
+typedef enum {
+#if CONFIG_IDF_TARGET_ESP32
+    ADC_WIDTH_BIT_9  = 0, /*!< ADC capture width is 9Bit. */
+    ADC_WIDTH_BIT_10 = 1, /*!< ADC capture width is 10Bit. */
+    ADC_WIDTH_BIT_11 = 2, /*!< ADC capture width is 11Bit. */
+    ADC_WIDTH_BIT_12 = 3, /*!< ADC capture width is 12Bit. */
+#elif SOC_ADC_MAX_BITWIDTH == 12
+    ADC_WIDTH_BIT_12 = 3, /*!< ADC capture width is 12Bit. */
+#elif SOC_ADC_MAX_BITWIDTH == 13
+    ADC_WIDTH_BIT_13 = 4, /*!< ADC capture width is 13Bit. */
+#endif
+    ADC_WIDTH_MAX,
+} adc_bits_width_t;
 /**
  * @brief ADC rtc controller attenuation option.
  *
