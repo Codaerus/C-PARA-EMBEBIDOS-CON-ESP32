@@ -56,6 +56,12 @@ typedef enum {
 } ledc_mode_t;
 
 typedef enum {
+    LEDC_INTR_DISABLE = 0,    /*!< Disable LEDC interrupt */
+    LEDC_INTR_FADE_END,       /*!< Enable LEDC interrupt */
+    LEDC_INTR_MAX,
+} ledc_intr_type_t;
+
+typedef enum {
     LEDC_TIMER_1_BIT = 1,   /*!< LEDC PWM duty resolution of  1 bits */
     LEDC_TIMER_2_BIT,       /*!< LEDC PWM duty resolution of  2 bits */
     LEDC_TIMER_3_BIT,       /*!< LEDC PWM duty resolution of  3 bits */
