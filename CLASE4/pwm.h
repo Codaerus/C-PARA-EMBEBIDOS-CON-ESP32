@@ -105,7 +105,23 @@ esp_err_t ledc_timer_config(const ledc_timer_config_t *timer_conf);
  */
 esp_err_t ledc_set_duty(ledc_mode_t speed_mode, ledc_channel_t channel, uint32_t duty);
 
-
+/**
+ * @brief LEDC update channel parameters
+ * @note  Call this function to activate the LEDC updated parameters.
+ *        After ledc_set_duty, we need to call this function to update the settings.
+ *        And the new LEDC parameters don't take effect until the next PWM cycle.
+ * @note  ledc_set_duty, ledc_set_duty_with_hpoint and ledc_update_duty are not thread-safe, do not call these functions to
+ *        control one LEDC channel in different tasks at the same time.
+ *        A thread-safe version of API is ledc_set_duty_and_update
+ * @param speed_mode Select the LEDC channel group with specified speed mode. Note that not all targets support high speed mode.
+ * @param channel LEDC channel (0 - LEDC_CHANNEL_MAX-1), select from ledc_channel_t
+ *
+ * @return
+ *     - ESP_OK Success
+ *     - ESP_ERR_INVALID_ARG Parameter error
+ *
+ */
+esp_err_t ledc_update_duty(ledc_mode_t speed_mode, ledc_channel_t channel);
 /**
  * @brief Configure LEDC settings
  *
