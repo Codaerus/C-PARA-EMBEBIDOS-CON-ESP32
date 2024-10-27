@@ -56,6 +56,23 @@ typedef enum {
 } ledc_mode_t;
 
 typedef enum {
+    LEDC_TIMER_1_BIT = 1,   /*!< LEDC PWM duty resolution of  1 bits */
+    LEDC_TIMER_2_BIT,       /*!< LEDC PWM duty resolution of  2 bits */
+    LEDC_TIMER_3_BIT,       /*!< LEDC PWM duty resolution of  3 bits */
+    LEDC_TIMER_4_BIT,       /*!< LEDC PWM duty resolution of  4 bits */
+    LEDC_TIMER_5_BIT,       /*!< LEDC PWM duty resolution of  5 bits */
+    LEDC_TIMER_6_BIT,       /*!< LEDC PWM duty resolution of  6 bits */
+    LEDC_TIMER_7_BIT,       /*!< LEDC PWM duty resolution of  7 bits */
+    LEDC_TIMER_8_BIT,       /*!< LEDC PWM duty resolution of  8 bits */
+    LEDC_TIMER_9_BIT,       /*!< LEDC PWM duty resolution of  9 bits */
+    LEDC_TIMER_10_BIT,      /*!< LEDC PWM duty resolution of 10 bits */
+    LEDC_TIMER_11_BIT,      /*!< LEDC PWM duty resolution of 11 bits */
+    LEDC_TIMER_12_BIT,      /*!< LEDC PWM duty resolution of 12 bits */
+    LEDC_TIMER_13_BIT,      /*!< LEDC PWM duty resolution of 13 bits */
+    LEDC_TIMER_14_BIT,      /*!< LEDC PWM duty resolution of 14 bits */
+} ledc_timer_bit_t;
+
+typedef enum {
     LEDC_TIMER_0 = 0, /*!< LEDC timer 0 */
     LEDC_TIMER_1,     /*!< LEDC timer 1 */
     LEDC_TIMER_2,     /*!< LEDC timer 2 */
