@@ -89,6 +89,12 @@ typedef enum {
     LEDC_CHANNEL_5,     /*!< LEDC channel 5 */
 } ledc_channel_t;
 
+typedef enum {
+    LEDC_AUTO_CLK = 0,    /*!< The driver will automatically select the source clock(REF_TICK or APB) based on the giving resolution and duty parameter when init the timer*/
+    LEDC_USE_APB_CLK,     /*!< LEDC timer select APB clock as source clock*/
+    LEDC_USE_RTC8M_CLK,   /*!< LEDC timer select RTC8M_CLK as source clock. Only for low speed channels and this parameter must be the same for all low speed channels*/
+} ledc_clk_cfg_t;
+
 /**
  * @brief LEDC callback parameter
  */
