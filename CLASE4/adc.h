@@ -32,17 +32,10 @@ typedef enum {
  * @note  Only used in single read mode
  */
 typedef enum {
-#if CONFIG_IDF_TARGET_ESP32
     ADC_WIDTH_BIT_9  = 0, /*!< ADC capture width is 9Bit. */
     ADC_WIDTH_BIT_10 = 1, /*!< ADC capture width is 10Bit. */
     ADC_WIDTH_BIT_11 = 2, /*!< ADC capture width is 11Bit. */
     ADC_WIDTH_BIT_12 = 3, /*!< ADC capture width is 12Bit. */
-#elif SOC_ADC_MAX_BITWIDTH == 12
-    ADC_WIDTH_BIT_12 = 3, /*!< ADC capture width is 12Bit. */
-#elif SOC_ADC_MAX_BITWIDTH == 13
-    ADC_WIDTH_BIT_13 = 4, /*!< ADC capture width is 13Bit. */
-#endif
-    ADC_WIDTH_MAX,
 } adc_bits_width_t;
 /**
  * @brief ADC rtc controller attenuation option.
