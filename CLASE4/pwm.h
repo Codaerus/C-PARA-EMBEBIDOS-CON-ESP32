@@ -47,6 +47,30 @@ typedef struct {
                                                 For low speed channels, you can also specify the source clock using LEDC_USE_RTC8M_CLK, in this case, all low speed channel's source clock must be RTC8M_CLK*/
 } ledc_timer_config_t;
 
+typedef enum {
+#if SOC_LEDC_SUPPORT_HS_MODE
+    LEDC_HIGH_SPEED_MODE = 0, /*!< LEDC high speed speed_mode */
+#endif
+    LEDC_LOW_SPEED_MODE,      /*!< LEDC low speed speed_mode */
+    LEDC_SPEED_MODE_MAX,      /*!< LEDC speed limit */
+} ledc_mode_t;
+
+typedef enum {
+    LEDC_TIMER_0 = 0, /*!< LEDC timer 0 */
+    LEDC_TIMER_1,     /*!< LEDC timer 1 */
+    LEDC_TIMER_2,     /*!< LEDC timer 2 */
+    LEDC_TIMER_3,     /*!< LEDC timer 3 */
+    LEDC_TIMER_MAX,
+} ledc_timer_t;
+
+typedef enum {
+    LEDC_CHANNEL_0 = 0, /*!< LEDC channel 0 */
+    LEDC_CHANNEL_1,     /*!< LEDC channel 1 */
+    LEDC_CHANNEL_2,     /*!< LEDC channel 2 */
+    LEDC_CHANNEL_3,     /*!< LEDC channel 3 */
+    LEDC_CHANNEL_4,     /*!< LEDC channel 4 */
+    LEDC_CHANNEL_5,     /*!< LEDC channel 5 */
+} ledc_channel_t;
 
 /**
  * @brief LEDC callback parameter
